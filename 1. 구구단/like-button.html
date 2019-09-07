@@ -9,21 +9,21 @@
 
 <body>
   <div id="root">
-    <div>좋아요 눌렀음</div>
-    <button>Like</button>
+    <div v-if="liked">좋아요 눌렀음</div>
+    <button v-else v-on:click="onClickButton">Like</button>
   </div>
 </body>
 <script>
   const app = new Vue({
     el: '#root',
     data: {
-      liked: false,
+      liked: false
     },
     methods: {
       onClickButton() {
         this.liked = true;
       },
-    },
+    }
   });
 </script>
 
